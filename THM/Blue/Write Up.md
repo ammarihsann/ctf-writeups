@@ -17,7 +17,7 @@ Exploit the EternalBlue vulnerability on a Windows 7 machine, gain remote access
 ### Nmap Scan
 
 ```bash
-nmap -sC -sV -p- -T4 <IP>
+nmap -sC -sV -T4 -oN scan.txt <IP>
 ```
 
 ### Key Findings:
