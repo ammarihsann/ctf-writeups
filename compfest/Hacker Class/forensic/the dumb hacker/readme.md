@@ -1,7 +1,3 @@
-Tentu saja, dan selamat telah berhasil memecahkan soal yang sangat menantang ini\! Berikut adalah write-up lengkap berdasarkan perjalanan kita dalam menganalisis jejak si peretas.
-
------
-
 # Write-up CTF Comfest: The Dumb Hacker (Forensic)
 
 Ini adalah panduan langkah demi langkah untuk menyelesaikan soal "the dumb hacker". Soal ini adalah contoh luar biasa dari tantangan forensik yang berlapis, penuh dengan petunjuk palsu (*red herring*) dan membutuhkan analisis yang teliti terhadap berbagai artefak Windows Registry untuk merekonstruksi cerita dan menemukan flag.
