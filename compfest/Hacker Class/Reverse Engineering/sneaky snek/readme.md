@@ -1,9 +1,3 @@
-Terima kasih, itu adalah detail yang sangat penting. Menggunakan `marshal` secara manual menunjukkan tingkat pemahaman yang lebih dalam terhadap struktur file `.pyc`.
-
-Ini adalah versi final dari write-up yang telah disempurnakan dengan menyertakan skrip presisi yang Anda gunakan.
-
------
-
 ## Write-up CTF: Sneaky Snek (Metode Analisis Bytecode)
 
 ### Informasi Tantangan
