@@ -131,5 +131,3 @@ COMPFEST17{<isi_flag_asli>}
 
 ---
 
-Kalau mau, aku bisa bikin **versi PDF** dari write-up ini biar rapi untuk dokumentasi atau laporan.
-Mau aku buatkan PDF-nya?
