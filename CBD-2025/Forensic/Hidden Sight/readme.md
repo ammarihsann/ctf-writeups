@@ -1,4 +1,4 @@
-Siap! Berikut write-up rapi untuk tantangan forensic **Hidden Sight** — lengkap dari nol sampai ketemu flag yang kamu susun manual.
+ **Hidden Sight**
 
 # Ringkasan
 
@@ -158,5 +158,3 @@ Lalu crop & gabung seperti pada langkah 4.
 * **Path salah**: gunakan path absolut untuk `-s` (sumber) & `-d` (tujuan).
 * **Huruf mirip angka**: validasi dengan konteks kata (mis. `I` vs `1`, `o` vs `0`).
 * **Kolase**: atur `-w` (jumlah tile per baris) agar potongan tulisan berhimpit rapi.
-
-Selesai. Kalau mau, aku bisa rapikan **script satu-kali-jalan** yang dari `btr.jpg` langsung keluarkan `flag.txt`.
