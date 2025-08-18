@@ -167,20 +167,3 @@ dir
 * **Skema payload:** `Base64( IV || CT || HMAC-SHA256 )`
 * **Kunci (dari stager):** `9f4c8b2e6a7f1d3b9ab2c4d5e6f70812a1b2c3d4e5f60718293a4b5c6d7e8f90`
 * **Artefak konten:** perintah `dir`, `type`, akses `flag.txt`
-
----
-
-# Rekomendasi Mitigasi
-
-1. **TLS interception / egress filtering:** blokir outbound arbitrary TCP ke port non-standar; allow-list domain/IP yang sah.
-2. **EDR telemetry:** alert pada `powershell.exe -enc` & script block logging (Event ID 4104).
-3. **DLP rules:** deteksi anomali Base64 berukuran besar pada kanal non-HTTP.
-4. **Network baselining:** alarm jika host melakukan koneksi persist ke IP baru/asing via port jarang.
-
----
-
-Kalau ingin, aku bisa paketkan **tool kecil** (CLI) yang:
-
-* otomatis deteksi kunci dari stager,
-* ekstrak semua stream `tcp.port==4444`,
-* dan keluarkan **CSV timeline** + **log plaintext** seperti yang kulampirkan.
