@@ -113,5 +113,3 @@ picoCTF{f1u3n7_1n_pn9_&_pdf_7f9bccd1}
 * Data ekstra sering diletakkan **setelah IEND** di PNG.
 * Gunakan kombinasi `file`, `pngcheck`, `binwalk`, dan `dd` untuk memverifikasi serta mengekstrak data tersembunyi.
 * Stream PDF (`(... )Tj`) bisa langsung mengungkap teks rahasia tanpa harus render keseluruhan PDF.
-
-Mau saya bikinkan juga versi **Word (.docx)** dari write-up ini biar lebih rapih untuk dokumentasi magang/portofolio kamu?
