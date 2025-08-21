@@ -80,8 +80,6 @@ Buka `fixed.jpg` → gambar berisi teks flag.
 
 ---
 
----
-
 ## Flag
 
 ```
