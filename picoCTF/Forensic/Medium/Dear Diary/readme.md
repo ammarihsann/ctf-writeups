@@ -30,7 +30,7 @@ Diberikan sebuah **disk image** Linux. Flag tidak tersimpan sebagai satu file je
 
    * Pada panel kiri, pilih data source (volume ext).
    * **Keyword Search**: cari `.txt` untuk memfilter file teks kecil.
-   * **Tunggu semua sampe ke load.
+   * Tunggu semua sampe ke load.
    
 
 3. **Satukan potongan**
