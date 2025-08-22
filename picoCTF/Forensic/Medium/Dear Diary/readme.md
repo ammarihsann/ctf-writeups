@@ -1,0 +1,90 @@
+# picoCTF – Dear Diary (Forensics)
+
+**Author:** syreal
+**Hint:** “Jika mengamati data biner mentah di terminal, kamu bisa tertipu soal isi sebuah blok.”
+
+## Ringkasan
+
+Diberikan sebuah **disk image** Linux. Flag tidak tersimpan sebagai satu file jelas; potongannya tersebar pada file-file kecil (bahkan berukuran 0 byte) di direktori `root/secret-secrets/`. Kita gunakan **Autopsy** untuk mengekstrak & menganalisis semua partisi, lalu mencari file teks dan menyatukan potongan menjadi flag.
+
+**Flag:** `picoCTF{1_533_n4m35_80d24b30}`
+
+---
+
+## Tools
+
+* Autopsy (2.x atau 4.x)
+* (Opsional) The Sleuth Kit CLI: `mmls`, `fls`, `icat`, `istat`, `blkls`
+
+---
+
+## Langkah (Autopsy)
+
+1. **Buka image sebagai *Disk Image***
+
+   * `Add Data Source → Disk Image or VM File → pilih disk.flag.img`
+   * Biarkan Autopsy mendeteksi partisi (jangan hanya memilih partisi manual).
+   * *Tips:* di 4.x, jalankan ingest minimal: **File Type Identification**, **Embedded File Extractor**, **Keyword Search**.
+
+2. **Analyze seluruh image**
+
+   * Pada panel kiri, pilih data source (volume ext).
+   * **Keyword Search**: cari `.txt` untuk memfilter file teks kecil.
+   * Buka `root/secret-secrets/` — terdapat beberapa file:
+
+     * `innocuous-file.txt`
+     * `its-all-in-the-name`
+     * `force-wait.sh` (opsional)
+
+3. **Jangan terpancing ukuran 0 byte**
+
+   * Jika tab **Text** kosong, buka **Strings** atau **Hex**.
+   * Di Autopsy 2.x (tab **Meta Data**), tekan **FORCE** untuk menampilkan *Fragments / Data Units*, lalu **View Contents → Strings** pada tiap blok.
+   * Kumpulkan potongan `picoCTF{…}` yang muncul di file-file tersebut.
+
+4. **Satukan potongan**
+
+   * Susun fragmen secara berurutan hingga membentuk flag lengkap:
+
+     ```
+     picoCTF{1_533_n4m35_80d24b30}
+     ```
+
+---
+
+## Kenapa hint-nya penting?
+
+Beberapa file berukuran **0 byte** tapi masih memiliki artefak di **block/fragment/slack space**. Melihat “raw” cepat di terminal sering tampak kosong, padahal string masih ada di blok terkait. Viewer **Strings/Hex** (atau traversing *Data Unit*) mengungkap isi tersebut.
+
+---
+
+## Alternatif (CLI – The Sleuth Kit)
+
+Jika ingin tanpa GUI:
+
+```bash
+# 1) Lihat partisi
+mmls disk.flag.img
+
+# Misal partisi Linux data mulai di sektor 1140736:
+OFFSET=1140736
+
+# 2) Telusuri direktori
+fls -o $OFFSET disk.flag.img            # cari inode /root, dst.
+fls -o $OFFSET disk.flag.img 1842       # contoh: /root/secret-secrets
+
+# 3) Lihat isi file (beserta slack)
+icat -o $OFFSET -s disk.flag.img 1844 | strings   # innocuous-file.txt
+icat -o $OFFSET -s disk.flag.img 1845 | strings   # its-all-in-the-name
+
+# 4) Jalan pintas: sapu seluruh partisi dan grep pola flag
+blkls -o $OFFSET -r disk.flag.img | strings | grep -o 'picoCTF{[^}]*}' | sort -u
+```
+
+---
+
+## Catatan & Pitfall
+
+* **Jangan hanya menambahkan partisi tunggal** saat import; tambahkan **disk image** penuh agar Autopsy mengekstrak semua partisi & artefak.
+* Selalu cek **Strings/Hex** bila **Text** kosong.
+* Jika pakai Autopsy 2.x, gunakan tombol **FORCE** di **Meta Data** untuk menampilkan fragmen.
