@@ -58,31 +58,6 @@ Beberapa file berukuran **0 byte** tapi masih memiliki artefak di **block/fragme
 
 ---
 
-## Alternatif (CLI – The Sleuth Kit)
-
-Jika ingin tanpa GUI:
-
-```bash
-# 1) Lihat partisi
-mmls disk.flag.img
-
-# Misal partisi Linux data mulai di sektor 1140736:
-OFFSET=1140736
-
-# 2) Telusuri direktori
-fls -o $OFFSET disk.flag.img            # cari inode /root, dst.
-fls -o $OFFSET disk.flag.img 1842       # contoh: /root/secret-secrets
-
-# 3) Lihat isi file (beserta slack)
-icat -o $OFFSET -s disk.flag.img 1844 | strings   # innocuous-file.txt
-icat -o $OFFSET -s disk.flag.img 1845 | strings   # its-all-in-the-name
-
-# 4) Jalan pintas: sapu seluruh partisi dan grep pola flag
-blkls -o $OFFSET -r disk.flag.img | strings | grep -o 'picoCTF{[^}]*}' | sort -u
-```
-
----
-
 ## Catatan & Pitfall
 
 * **Jangan hanya menambahkan partisi tunggal** saat import; tambahkan **disk image** penuh agar Autopsy mengekstrak semua partisi & artefak.
