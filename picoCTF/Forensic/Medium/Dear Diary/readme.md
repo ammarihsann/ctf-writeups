@@ -30,19 +30,10 @@ Diberikan sebuah **disk image** Linux. Flag tidak tersimpan sebagai satu file je
 
    * Pada panel kiri, pilih data source (volume ext).
    * **Keyword Search**: cari `.txt` untuk memfilter file teks kecil.
-   * Buka `root/secret-secrets/` — terdapat beberapa file:
+   * **Tunggu semua sampe ke load.
+   
 
-     * `innocuous-file.txt`
-     * `its-all-in-the-name`
-     * `force-wait.sh` (opsional)
-
-3. **Jangan terpancing ukuran 0 byte**
-
-   * Jika tab **Text** kosong, buka **Strings** atau **Hex**.
-   * Di Autopsy 2.x (tab **Meta Data**), tekan **FORCE** untuk menampilkan *Fragments / Data Units*, lalu **View Contents → Strings** pada tiap blok.
-   * Kumpulkan potongan `picoCTF{…}` yang muncul di file-file tersebut.
-
-4. **Satukan potongan**
+3. **Satukan potongan**
 
    * Susun fragmen secara berurutan hingga membentuk flag lengkap:
 
