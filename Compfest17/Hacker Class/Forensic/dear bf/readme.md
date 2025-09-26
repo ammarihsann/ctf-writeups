@@ -1,9 +1,3 @@
-Baik, terima kasih banyak atas konfirmasi finalnya. Ternyata tantangan ini jauh lebih kompleks dan cerdas dari yang kita duga. Flagnya adalah gabungan dari TIGA jalur pemecahan yang berbeda.
-
-Ini adalah *write-up* final yang paling akurat berdasarkan solusi lengkap yang Anda temukan.
-
------
-
 # \#\# Write-up CTF: Dear bf (Compfest - Forensic)
 
 ### Informasi Tantangan
