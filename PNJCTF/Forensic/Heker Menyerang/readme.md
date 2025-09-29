@@ -1,5 +1,5 @@
-```
-Heker Menyerang 
+
+# Heker Menyerang 
 
 Kita telah diserang dengan serangan besar-besaran oleh hacker ganas, dan tim SOC memberikan log Snort kepada Anda.
 Tim Anda ditugaskan untuk menghitung berapa banyak serangan yang terjadi pada ASP.NET Web Pages yang terkait dengan
@@ -11,7 +11,7 @@ Contoh : Jika serangan yang dihitung totalnya ada 100 kali maka jawabannya adala
 
 Author : kurokaze (Zahir)
 
-```
+
 # Ringkasan
 
 * Yang diminta: hitung **(1)** semua **SQL Injection** yang menarget **ASP/ASP.NET pages** (`.asp` & `.aspx`) **+** **(2)** semua **Remote File Inclusion (RFI)** pada **aplikasi PHP**.
