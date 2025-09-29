@@ -1,7 +1,9 @@
 ```
 Heker Menyerang 
 
-Kita telah diserang dengan serangan besar-besaran oleh hacker ganas, dan tim SOC memberikan log Snort kepada Anda. Tim Anda ditugaskan untuk menghitung berapa banyak serangan yang terjadi pada ASP.NET Web Pages yang terkait dengan Database Injection Attack (SQL) dan juga serangan yang melibatkan RFI (Remote File Inclusion) pada aplikasi web PHP.
+Kita telah diserang dengan serangan besar-besaran oleh hacker ganas, dan tim SOC memberikan log Snort kepada Anda.
+Tim Anda ditugaskan untuk menghitung berapa banyak serangan yang terjadi pada ASP.NET Web Pages yang terkait dengan
+Database Injection Attack (SQL) dan juga serangan yang melibatkan RFI (Remote File Inclusion) pada aplikasi web PHP.
 
 Format Flag: playPNJ{jumlah}
 
